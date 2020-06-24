@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>common-boot-starter</artifactId>
+        <groupId>org.feasy.cloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>locks-spring-boot-starter</artifactId>
+    <description>分布式锁 自定义starter依赖</description>
+    <dependencies>
+        <!-- 依赖自定义Redis操作工具包 -->
+        <dependency>
+            <groupId>org.feasy.cloud</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Spring AOP 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- 分布式锁核心依赖 -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- Apache提供的一个用于操作JAVA bean的工具包 -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+        </dependency>
+    </dependencies>
+</project>

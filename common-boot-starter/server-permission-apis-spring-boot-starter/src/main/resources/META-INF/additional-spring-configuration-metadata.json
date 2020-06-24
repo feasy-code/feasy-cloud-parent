@@ -1,0 +1,34 @@
+{"properties": [
+  {
+    "name": "server.interface.publish.enable",
+    "type": "java.lang.Boolean",
+    "sourceType": "org.feasy.cloud.permission.api.properties.ServerInterfacePublishProperties",
+    "defaultValue": true
+  },
+  {
+    "name": "server.interface.publish.interface-package",
+    "type": "java.lang.String[]",
+    "sourceType": "org.feasy.cloud.permission.api.properties.ServerInterfacePublishProperties",
+    "defaultValue": [
+      "org.feasy.cloud.**.controller"
+    ]
+  },
+  {
+    "name": "server.interface.publish.server-id",
+    "type": "java.lang.String",
+    "defaultValue": "${spring.application.name}",
+    "sourceType": "org.feasy.cloud.permission.api.properties.ServerInterfacePublishProperties"
+  },
+  {
+    "name": "server.interface.publish.server-name",
+    "type": "java.lang.String",
+    "defaultValue": "${spring.application.name}",
+    "sourceType": "org.feasy.cloud.permission.api.properties.ServerInterfacePublishProperties"
+  },
+  {
+    "name": "server.interface.subscribe.enable",
+    "type": "java.lang.Boolean",
+    "sourceType": "org.feasy.cloud.permission.api.properties.ServerInterfaceSubscribeProperties",
+    "defaultValue": false
+  }
+]}

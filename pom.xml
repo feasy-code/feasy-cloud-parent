@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>application-server-parent</module>
+        <module>application-server-api-parent</module>
+        <module>application-server-domain-parent</module>
+        <module>common-boot-starter</module>
+    </modules>
+    <groupId>org.feasy.cloud</groupId>
+    <artifactId>feasy-cloud-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- 版本控制 -->
+    <properties>
+        <!-- JDK版本及编译器版本，项目编码 -->
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <!-- SpringCloud 官方组件  Start-->
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <spring-cloud-starter-gateway.version>2.2.2.RELEASE</spring-cloud-starter-gateway.version>
+        <spring-cloud-starter-openfeign.version>2.2.2.RELEASE</spring-cloud-starter-openfeign.version>
+        <!-- SpringCloud 官方组件  End-->
+        <!-- SpringCloud Alibaba组件  Start-->
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-starter-alibaba-nacos-discovery.version>${spring-cloud-alibaba.version}</spring-cloud-starter-alibaba-nacos-discovery.version>
+        <spring-cloud-starter-alibaba-nacos-config.version>${spring-cloud-alibaba.version}</spring-cloud-starter-alibaba-nacos-config.version>
+        <spring-cloud-starter-alibaba-sentinel.version>${spring-cloud-alibaba.version}</spring-cloud-starter-alibaba-sentinel.version>
+        <spring-cloud-alibaba-sentinel-gateway.version>${spring-cloud-alibaba.version}</spring-cloud-alibaba-sentinel-gateway.version>
+        <spring-cloud-starter-alibaba-seata.version>${spring-cloud-alibaba.version}</spring-cloud-starter-alibaba-seata.version>
+        <spring-cloud-starter-stream-rocketmq.version>${spring-cloud-alibaba.version}</spring-cloud-starter-stream-rocketmq.version>
+        <!-- SpringCloud Alibaba组件  End-->
+        <!-- SpringBoot 官方组件 Start-->
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <spring-boot-maven-plugin.version>${spring-boot.version}</spring-boot-maven-plugin.version>
+        <spring-boot-starter-actuator.version>${spring-boot.version}</spring-boot-starter-actuator.version>
+        <spring-boot-starter-security.version>${spring-boot.version}</spring-boot-starter-security.version>
+        <spring-boot-starter-data-redis.version>${spring-boot.version}</spring-boot-starter-data-redis.version>
+        <spring-boot-autoconfigure.version>${spring-boot.version}</spring-boot-autoconfigure.version>
+        <spring-boot-starter-web.version>${spring-boot.version}</spring-boot-starter-web.version>
+        <spring-boot-starter-test.version>${spring-boot.version}</spring-boot-starter-test.version>
+        <spring-boot-starter-data-jdbc.version>${spring-boot.version}</spring-boot-starter-data-jdbc.version>
+        <!-- SpringBoot 官方组件 End-->
+        <!-- SpringBoot 第三方组件 Start-->
+        <jasypt-spring-boot-starter.version>2.1.2</jasypt-spring-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.2.0</mybatis-plus-boot-starter.version>
+        <druid-spring-boot-starter.version>1.1.22</druid-spring-boot-starter.version>
+        <redisson-spring-boot-starter.version>3.12.5</redisson-spring-boot-starter.version>
+        <!-- SpringBoot 第三方组件 End-->
+        <!-- SpringBoot 自定义组件 Start-->
+        <!-- SpringBoot 自定义组件 End-->
+        <!-- 第三方依赖包 Start-->
+        <lombok.version>1.18.8</lombok.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <fastjson.version>1.2.68</fastjson.version>
+        <mysql-connector.version>8.0.16</mysql-connector.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <p6spy.version>3.8.7</p6spy.version>
+        <freemarker.version>2.3.28</freemarker.version>
+        <auth0-java-jwt.version>3.2.0</auth0-java-jwt.version>
+        <jsonwebtoken-jwt.version>0.7.0</jsonwebtoken-jwt.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <knife4j-spring-boot-starter.version>2.0.2</knife4j-spring-boot-starter.version>
+        <xxl-crawler.version>1.2.2</xxl-crawler.version>
+        <commons-codec.version>1.13</commons-codec.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <bucket4j-core.version>4.10.0</bucket4j-core.version>
+        <!-- 第三方依赖包 End-->
+        <!-- 自定义依赖包 Start-->
+        <!-- 自定义依赖包 End-->
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringCloud依赖 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringCloudAliBaba依赖 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringBoot 依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringCloud 官方组件  Start-->
+            <!-- 网关核心依赖 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-cloud-starter-gateway.version}</version>
+            </dependency>
+            <!-- 服务调用 OpenFeign-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-starter-openfeign.version}</version>
+            </dependency>
+            <!-- SpringCloud 官方组件  End-->
+            <!-- SpringCloud Alibaba组件  Start-->
+            <!-- Nacos服务注册发现依赖 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-starter-alibaba-nacos-discovery.version}</version>
+            </dependency>
+            <!-- 配置中心 动态配置刷新依赖 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${spring-cloud-starter-alibaba-nacos-config.version}</version>
+            </dependency>
+            <!-- 服务熔断、服务降级依赖 替代Hystrix -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${spring-cloud-starter-alibaba-sentinel.version}</version>
+            </dependency>
+            <!-- Sentinel结合Gateway网关配置依赖 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+                <version>${spring-cloud-alibaba-sentinel-gateway.version}</version>
+            </dependency>
+            <!-- Sage模式分布式事务依赖 -->
+            <!--<dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+                <version>${spring-cloud-starter-alibaba-seata.version}</version>
+            </dependency>-->
+            <!-- RocketMQ消息队列 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+                <version>${spring-cloud-starter-stream-rocketmq.version}</version>
+            </dependency>
+            <!-- SpringCloud Alibaba组件  End-->
+            <!-- SpringBoot 官方组件 Start-->
+            <!-- 服务信息监控 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot-starter-actuator.version}</version>
+            </dependency>
+            <!-- Redis核心依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
+            </dependency>
+            <!-- 自动配置依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot-autoconfigure.version}</version>
+            </dependency>
+            <!-- SpringBoot核心Web包 包含SpringMVC、内置Tomcat  -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-starter-web.version}</version>
+            </dependency>
+            <!-- SpringBoot测试包 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-starter-test.version}</version>
+            </dependency>
+            <!-- SpringBoot 官方组件 End-->
+            <!-- SpringBoot 第三方组件 Start-->
+            <!--文本加解密-->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- MybatisPlus Mybatis增强插件SpringBoot整合 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <!-- Druid阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- 分布式锁Redisson依赖 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- SpringBoot 第三方组件 End-->
+            <!-- SpringBoot 自定义组件 Start-->
+            <!-- 应用端统一依赖包包含：应用全局异常处理、统一响应格式... -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>common-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Redis工具包 应用端统一依赖 -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>redis-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- ORM持久层应用端统一依赖 -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>mysql-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- Swagger应用端统一依赖 -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 分布式锁 应用端统一依赖 -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>locks-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 服务Api扫苗，权限控制依赖 -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>server-permission-apis-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- RocketMQ自定义Starter -->
+            <dependency>
+                <groupId>org.feasy.cloud</groupId>
+                <artifactId>rocketmq-stream-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- SpringBoot 自定义组件 End-->
+            <!-- 第三方依赖包 Start-->
+            <!-- Apache的处理基本数据类型数据的工具包 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- Apache提供的通用的公共组件包 -->
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <!-- Apache提供的用于摘要运算、编码解码的包 -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <!-- Apache提供的一个用于操作JAVA bean的工具包 -->
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <!-- 阿里FastJson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- MySQL数据库连接驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+            <!-- 执行 SQL 分析打印插件 生产环境去掉 -->
+            <dependency>
+                <groupId>p6spy</groupId>
+                <artifactId>p6spy</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+            <!-- 代码生成器插件 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- MyBatisPlus基础依赖 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- Freemarker引擎 代码生成使用 -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+            <!-- JWT 签名依赖 -->
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${auth0-java-jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jsonwebtoken-jwt.version}</version>
+            </dependency>
+            <!-- Springfox Swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <!-- 原生Swagger2-UI包 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <!-- Swagger增强UI -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- Crawler 分布式爬虫框架 -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-crawler</artifactId>
+                <version>${xxl-crawler.version}</version>
+            </dependency>
+            <!-- 令牌桶Bucket4j依赖 -->
+            <dependency>
+                <groupId>com.github.vladimir-bukhtoyarov</groupId>
+                <artifactId>bucket4j-core</artifactId>
+                <version>${bucket4j-core.version}</version>
+            </dependency>
+            <!-- 第三方依赖包 End-->
+            <!-- 自定义依赖包 Start-->
+            <!-- 自定义依赖包 End-->
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!-- 模板框架 防止使用Lombok注解的地方报错，全局引用 打包时排除 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <!-- 开启反射获取方法参数名的支持 -->
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <!-- 要将源码放上去，需要加入这个插件 -->
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- 私服发布配置 -->
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <name>User Project Release</name>
+            <url>http://10.10.10.81:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>User Project SNAPSHOTS</name>
+            <url>http://10.10.10.81:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

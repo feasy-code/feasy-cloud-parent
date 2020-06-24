@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>feasy-cloud-parent</artifactId>
+        <groupId>org.feasy.cloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <artifactId>application-server-parent</artifactId>
+    <description>业务服务项目 父Moudel</description>
+
+    <dependencies>
+        <!-- 应用端统一依赖包包含：应用全局异常处理、统一响应格式... -->
+        <dependency>
+            <groupId>org.feasy.cloud</groupId>
+            <artifactId>common-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- ORM持久层应用端统一依赖 -->
+        <dependency>
+            <groupId>org.feasy.cloud</groupId>
+            <artifactId>mysql-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Redis工具包 应用端统一依赖 -->
+        <dependency>
+            <groupId>org.feasy.cloud</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Swagger应用端统一依赖 -->
+        <dependency>
+            <groupId>org.feasy.cloud</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- SpringMVC、Tomcat相关包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 服务信息监控 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- Nacos服务注册发现依赖 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- 配置中心 动态配置刷新依赖 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- 服务熔断、服务降级依赖 替代Hystrix -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <!-- 阿里FastJson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- 执行 SQL 分析打印插件 生产环境去掉 -->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- apache的处理基本数据类型数据的工具包 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- 测试相关包 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}_${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot-maven-plugin.version}</version>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

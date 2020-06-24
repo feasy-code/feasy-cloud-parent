@@ -1,0 +1,14 @@
+{"properties": [
+  {
+    "name": "swagger.api.enable",
+    "type": "java.lang.Boolean",
+    "sourceType": "org.feasy.cloud.swagger.properties.SwaggerProperties",
+    "defaultValue": true
+  },
+  {
+    "name": "swagger.api.package-path",
+    "type": "java.lang.String",
+    "sourceType": "org.feasy.cloud.swagger.properties.SwaggerProperties",
+    "defaultValue": ""
+  }
+]}
