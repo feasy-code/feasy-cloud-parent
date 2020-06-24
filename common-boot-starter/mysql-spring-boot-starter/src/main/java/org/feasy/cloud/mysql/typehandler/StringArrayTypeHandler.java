@@ -11,7 +11,7 @@ import java.sql.SQLException;
 /**
  * String数组分割
  * @author yangxiaohui
- * @date Create by 2020/1/6 12:02 下午
+ * @since Create by 2020/1/6 12:02 下午
  */
 public class StringArrayTypeHandler extends BaseTypeHandler<String[]> {
     @Override

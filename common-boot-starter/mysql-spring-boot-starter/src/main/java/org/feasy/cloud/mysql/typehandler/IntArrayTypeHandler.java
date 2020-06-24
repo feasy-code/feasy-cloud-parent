@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Int数组分割转换
  * @author yangxiaohui
- * @date Create by 2020/1/6 11:59 上午
+ * @since  Create by 2020/1/6 11:59 上午
  */
 public class IntArrayTypeHandler extends BaseTypeHandler<int[]> {
     @Override
