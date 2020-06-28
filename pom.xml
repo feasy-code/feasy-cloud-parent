@@ -459,7 +459,7 @@
 
     <!-- 项目信息 -->
     <name>Create SpringCloud project more easily</name>
-    <url>https://github.com/feasy-code/feasy-cloud-parent</url>
+    <url>https://github.com/feasy-org/feasy-cloud-parent</url>
     <description>Create SpringCloud project more easily, main framework: SpringCloud Hoxton.sr4, SpringCloudAlibaba 2.2.1, SpringBoot 2.2.7</description>
 
     <!--Licenses信息-->
@@ -473,8 +473,8 @@
     <!--SCM信息-->
     <scm>
         <url>http://feasy.org</url>
-        <connection>scm:git:https://github.com/feasy-code/feasy-cloud-parent.git</connection>
-        <developerConnection>scm:git:https://github.com/feasy-code/feasy-cloud-parent.git</developerConnection>
+        <connection>scm:git:https://github.com/feasy-org/feasy-cloud-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/feasy-org/feasy-cloud-parent.git</developerConnection>
     </scm>
     <!--发布者信息-->
     <developers>
