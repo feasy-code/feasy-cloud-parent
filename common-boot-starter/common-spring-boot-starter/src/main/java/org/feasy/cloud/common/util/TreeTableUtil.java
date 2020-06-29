@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
  * @since 2020/5/13
  */
 @Slf4j
+@Deprecated
 public class TreeTableUtil {
     public static <T> List<T> listToTreeList(List<T> originalList, String idFieldName, String pidFieldName, String childrenFieldName) {
         // 获取根节点数据
