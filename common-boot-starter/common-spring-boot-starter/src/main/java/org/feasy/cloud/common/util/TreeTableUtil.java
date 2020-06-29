@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * <p>
  * 树形结构数据构建工具类
  * </p>
- *
+ * @deprecated 该工具已过期，推荐使用{@link org.feasy.cloud.common.tree.TreeDataUtil}，是其的优化版本
  * @author yangxiaohui
  * @since 2020/5/13
  */
@@ -68,7 +68,6 @@ public class TreeTableUtil {
                 return false;
             }
         }).collect(Collectors.toList()));
-
         // 将当前父节点下的子节点列表写入到当前父节点下（给子节点列表字段赋值）
         if (!childNodeList.isEmpty()){
             FieldUtils.writeDeclaredField(parentNode, childrenFieldName, childNodeList, true);
