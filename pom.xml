@@ -67,7 +67,7 @@
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-lang.version>2.6</commons-lang.version>
         <fastjson.version>1.2.68</fastjson.version>
-        <mysql-connector.version>8.0.16</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <p6spy.version>3.8.7</p6spy.version>
         <freemarker.version>2.3.28</freemarker.version>
