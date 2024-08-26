@@ -73,7 +73,7 @@
         <freemarker.version>2.3.28</freemarker.version>
         <auth0-java-jwt.version>3.2.0</auth0-java-jwt.version>
         <jsonwebtoken-jwt.version>0.7.0</jsonwebtoken-jwt.version>
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger2.version>2.10.0</springfox-swagger2.version>
         <knife4j-spring-boot-starter.version>2.0.2</knife4j-spring-boot-starter.version>
         <xxl-crawler.version>1.2.2</xxl-crawler.version>
         <commons-codec.version>1.13</commons-codec.version>
